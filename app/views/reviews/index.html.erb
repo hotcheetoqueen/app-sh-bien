@@ -1,0 +1,10 @@
+<b>Users like you have added <%= @number %> new reviews today!</b>
+
+<br>
+<br>
+
+<% @reviews.each do |review| %>
+    <div class="review">
+        <%= review %>
+    </div>
+<% end %>

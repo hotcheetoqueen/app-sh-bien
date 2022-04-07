@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
 
     def create
         #grab info from form
-        @review = Review.new(params.require(:review).permit(:title, :body, :score))
+        @review = Review.new(form_params)
 
         #save to database
         @review.save
@@ -32,17 +32,20 @@ class ReviewsController < ApplicationController
 
     def update
         @review = Review.find(params[:id])
-        @review.update(params.require(:review).permit(:title, :body, :score))
+        @review.update(form_params)
 
         redirect_to review_path(@review)
     end
-        
 
     def destroy
         @review = Review.find(params[:id])
         @review.destroy
 
         redirect_to root_path
+    end
+
+    def form_params
+        params.require(:review).permit(:title, :body, :score)
     end
     
 end

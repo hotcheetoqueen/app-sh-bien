@@ -13,7 +13,9 @@
   <body>
     <header>
       <h1>
-        <%= link_to "Bien Reviews", root_path %>
+        <%= link_to root_path do %>
+          <%= image_tag "bien-logo.svg" %>
+        <% end %>
       </h1>
       <p>The best restaurant reviews in the world 🌎</p>
       <nav>

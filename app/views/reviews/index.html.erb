@@ -1,7 +1,16 @@
-<b>Users like you have added <%= @number %> new reviews today!</b>
+<% content_for :page_title, "Homepage" %>
 
-<br>
-<br>
+<nav class="filters">
+    <%= link_to "All reviews", root_path %>
+    <%# Price:  %>
+    <%= link_to "$", root_path(price: 1, cuisine: @cuisine) %>
+    <%= link_to "$$", root_path(price: 2, cuisine: @cuisine) %>
+    <%= link_to "$$$", root_path(price: 3, cuisine: @cuisine) %>
+    <%# Cuisine:  %>
+    <%= link_to "Indian", root_path(cuisine: "Indian", price: @price) %>
+    <%= link_to "Vietnamese", root_path(cuisine: "Vietnamese", price: @price) %>
+    <%= link_to "Mexican", root_path(cuisine: "Mexican", price: @price) %>
+</nav>
 
 <% @reviews.each do |review| %>
     <div class="review">

@@ -3,7 +3,17 @@
 <h1><%= @review.title %></h1>
 
 <div class="score">
-    <%= @review.score %> out of 10
+    Score: <%= @review.score %> out of 10
+</div>
+
+<% if @review.ambiance.present? %>
+    <div class="ambiance">
+        Ambiance: <%= @review.ambiance %>
+    </div>
+<% end %>
+
+<div class="phone_number">
+    Phone: <%=  @review.phone_number %>
 </div>
 
 <div class="body">

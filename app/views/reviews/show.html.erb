@@ -6,15 +6,29 @@
     Score: <%= @review.score %> out of 10
 </div>
 
+<% if @review.price.present? %>
+    <div class="price">
+        Price: <%=  @review.price %>
+    </div>
+<% end %>
+
+<% if @review.cuisine.present? %>
+    <div class="cuisine">
+        Cuisine: <%=  @review.cuisine %>
+    </div>
+<% end %>
+
 <% if @review.ambiance.present? %>
     <div class="ambiance">
         Ambiance: <%= @review.ambiance %>
     </div>
 <% end %>
 
-<div class="phone_number">
-    Phone: <%=  @review.phone_number %>
-</div>
+<% if @review.phone_number.present? %>
+    <div class="phone_number">
+        Phone: <%=  @review.phone_number %>
+    </div>
+<% end %>
 
 <div class="body">
     <%= simple_format @review.body %>

@@ -21,6 +21,16 @@
 
 <% @reviews.each do |review| %>
     <div class="review">
-        <%= active_link_to review.title, review_path(review) %>
+        <%= link_to review_path(review) do %>
+            <h2><%= review.title %></h2>
+            <p>
+                <% if review.cuisine.present? %>
+                    <%= review.cuisine %>  - 
+                    <% else %>
+                        <%= "" %>
+                <% end %>
+                <%= pluralize review.comments.count, "comment" %>
+            </p>
+        <% end %>
     </div>
 <% end %>

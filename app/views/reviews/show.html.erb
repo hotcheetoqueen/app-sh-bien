@@ -24,6 +24,10 @@
     </div>
 <% end %>
 
+<div class="address">
+    Address: <%=  @review.address %>
+</div>
+
 <% if @review.phone_number.present? %>
     <div class="phone_number">
         Phone: <%=  @review.phone_number %>

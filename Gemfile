@@ -42,6 +42,9 @@ gem "geocoder"
 # Add form support
 gem "simple_form"
 
+# Add link support to show active filters
+gem "active_link_to"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 

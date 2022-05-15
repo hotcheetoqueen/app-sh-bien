@@ -29,7 +29,10 @@ header, main, footer {
 }
 
 a {
+  margin: 0 5px 0 0;
+  text-decoration: none;
   color: $green;
+
 }
 
 header {
@@ -92,6 +95,10 @@ nav.filters {
     margin: 0 5px 0 0;
     text-decoration: none;
     color: $black;
+
+    &.active {
+      color: $green;
+    }
   }
   
   div, form {

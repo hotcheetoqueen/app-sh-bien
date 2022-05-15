@@ -1,18 +1,18 @@
 <% content_for :page_title, "Homepage" %>
 
 <nav class="filters">
-    <%= link_to "All reviews", root_path %>
+    <%= active_link_to "All reviews", root_path, active: { price: nil, cuisine: nil, location: nil } %>
     <%# Price:  %>
     <div>
-        <%= link_to "$", root_path(price: 1, cuisine: @cuisine) %>
-        <%= link_to "$$", root_path(price: 2, cuisine: @cuisine) %>
-        <%= link_to "$$$", root_path(price: 3, cuisine: @cuisine) %>
+        <%= active_link_to "$", root_path(price: 1, cuisine: @cuisine), active: { price: 1 } %>
+        <%= active_link_to "$$", root_path(price: 2, cuisine: @cuisine), active: { price: 2 } %>
+        <%= active_link_to "$$$", root_path(price: 3, cuisine: @cuisine), active: { price: 3 } %>
     </div>
     <%# Cuisine:  %>
     <div>
-        <%= link_to "Indian", root_path(cuisine: "Indian", price: @price) %>
-        <%= link_to "Vietnamese", root_path(cuisine: "Vietnamese", price: @price) %>
-        <%= link_to "Mexican", root_path(cuisine: "Mexican", price: @price) %>
+        <%= active_link_to "Indian", root_path(cuisine: "Indian", price: @price), active: { cuisine: "Indian" } %>
+        <%= active_link_to "Vietnamese", root_path(cuisine: "Vietnamese", price: @price), active: { cuisine: "Vietnamese" } %>
+        <%= active_link_to "Mexican", root_path(cuisine: "Mexican", price: @price), active: { cuisine: "Mexican" } %>
     </div>
     <form action="/">
         <input type="text" name="location" placeholder="Search location..." value="<%= @location %>">
@@ -21,6 +21,6 @@
 
 <% @reviews.each do |review| %>
     <div class="review">
-        <%= link_to review.title, review_path(review) %>
+        <%= active_link_to review.title, review_path(review) %>
     </div>
 <% end %>

@@ -23,10 +23,12 @@
         The best restaurant reviews in the world 🌎
       </nav>
       <nav>
-        User: <%= session[:user_id] %>
-      </nav>
-      <nav>
-        <%= link_to "Add a review", new_review_path %>
+        <% if session[:user_id].present? %>
+            <%= link_to "Add a review", new_review_path %>
+          <% else %>
+            <%= link_to "Sign up", new_user_path %>
+            <%= link_to "Log in", new_session_path %>
+        <% end %>
       </nav>
     </header>
 

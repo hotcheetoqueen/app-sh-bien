@@ -1,0 +1,8 @@
+<%= simple_form_for @user, data: { turbo: false } do |f| %>
+    <%= f.input :username %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+
+    <%= f.button :submit, "Sign up" %>
+<% end %>

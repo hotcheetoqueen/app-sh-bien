@@ -12,12 +12,19 @@
 
   <body>
     <header>
-      <h1>
-        <%= link_to root_path do %>
-          <%= image_tag "bien-logo.svg" %>
-        <% end %>
-      </h1>
-      <p>The best restaurant reviews in the world 🌎</p>
+      <nav>
+        <h1>
+          <%= link_to root_path do %>
+            <%= image_tag "bien-logo.svg" %>
+          <% end %>
+        </h1>
+      </nav>
+      <nav>
+        The best restaurant reviews in the world 🌎
+      </nav>
+      <nav>
+        User: <%= session[:user_id] %>
+      </nav>
       <nav>
         <%= link_to "Add a review", new_review_path %>
       </nav>

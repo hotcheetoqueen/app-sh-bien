@@ -2,6 +2,15 @@
 
 <h1><%= @review.title %></h1>
 
+<div class="user">
+    Posted by
+        <%if @review.user.present? %>
+            <%= link_to @review.user.username, user_path(@review.user) %>
+        <% else %>
+            Anonymous
+        <% end %>
+</div>
+
 <div class="score">
     Score: <%= @review.score %> out of 10
 </div>

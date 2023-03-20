@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
 
+    before_action :check_login, except: [:index, :show]
+
     def index
         @price = params[:price]
         @cuisine = params[:cuisine]
@@ -28,6 +30,7 @@ class ReviewsController < ApplicationController
     def create
         #grab info from form
         @review = Review.new(form_params)
+        @review.user = @current_user
 
         #save to model
         if @review.save

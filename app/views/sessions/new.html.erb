@@ -1,7 +1,7 @@
 <h2>Log in</h2>
 
 <%# Sessions don't have a model so need to tell it to go to URL %>
-<%= simple_form_for :session, url: sessions_path do |f| %>
+<%= simple_form_for :session, url: session_path do |f| %>
     <%= f.input :username %>
     <%= f.input :password %>
 

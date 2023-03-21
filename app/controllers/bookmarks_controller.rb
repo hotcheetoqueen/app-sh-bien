@@ -1,9 +1,10 @@
 class BookmarksController < ApplicationController
     before_action :check_login
 
-    # def show
-    #     @bookmark = @review.bookmarks.where(user: @current_user)
-    # end
+    def show
+        @review = Review.find(params[:review_id])
+        @bookmark = @review.bookmarks.where(user: @current_user)
+    end
     
     def create
         @review = Review.find(params[:review_id])
